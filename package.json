@@ -1,0 +1,15 @@
+{
+  "name": "server-events",
+  "version": "1.0.0",
+  "description": "An experiment on server side events",
+  "main": "index.js",
+  "author": "Vinod",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "express": "^4.16.3",
+    "socket.io": "^2.1.0",
+    "uuid": "^3.2.1",
+    "ws": "^5.1.1"
+  }
+}

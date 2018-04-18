@@ -1,0 +1,1 @@
+A POC to test if server events can be implemented in a better way
