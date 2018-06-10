@@ -1,7 +1,7 @@
 
 const express = require("express");
-const ServerEvent = require("./lib/serverevent");
-
+const ServerEvent = require("./dist/bundle");
+console.log(ServerEvent)
 const app = express();
 
 ServerEvent.setup();
