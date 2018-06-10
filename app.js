@@ -1,9 +1,10 @@
 
 const express = require("express");
-const serverevent = require("./lib/serverevent");
+const ServerEvent = require("./lib/serverevent");
+
 const app = express();
 
-serverevent.setup();
+ServerEvent.setup();
 app.use(express.static("public"));
 
 app.get("/time", (req, res) => {
@@ -14,10 +15,10 @@ app.get("/time", (req, res) => {
 
 app.get("/time/real", (req, res) => {
     console.log("headers", req.headers)
-    res.send(serverevent.createEvent(req, res, (req, res, cb) => {
+    res.send(new ServerEvent(req, res).do((req, res) => {
         setInterval(() => {
             console.log("Running time ");
-            cb({
+            res.send({
                 time: new Date()
             })
 
