@@ -15,7 +15,14 @@ app.get("/time", (req, res) => {
 
 app.get("/time/real", (req, res) => {
     console.log("headers", req.headers)
+    // res.send({
+    //     time: new Date()
+    // })
+
     res.send(new ServerEvent(req, res).do((req, res) => {
+        res.send({
+            time: new Date()
+        })
         setInterval(() => {
             console.log("Running time ");
             res.send({
